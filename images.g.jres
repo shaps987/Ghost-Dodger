@@ -1,0 +1,12 @@
+{
+    "image1": {
+        "data": "hwQgACAAAAAAAAAAsMzMDAAAAAAAAAAAAAAAALsREcsAAAAAAAAAAAAAsMwcsRuxDAAAAADAzMwAANsRHLu7EQwAAAAAvBGxALDdERzbuxEMAAAAwNsRsQDb3REc3N0RDADAzMzdEbGw3d0RHLzdzQAAvB3N3RGx293dEdzBy8zMzLwb0dsRsdvd3RHcsd27u7u7uxHbEbHb3d0RHB3b3d3d3b0R2xGx293dERwdvdG7u7u7G7ERsdvd3RHc0bERu93d3RuxEbHb3d0RvNHRGxEREREbsRGx293dEbwdHRvb3d3dG7ERsdvd3RG8Gx0bu93d3RuxEbHb3d0RvBsdGxEREREbsRGx293dEbwbHRsRERERG7ERsdvd3RG8Gx0bu93d3RuxEbHb3d0RvB0dG9vd3d0bsRGx293dEbzR0RsRERERG7ERsdvd3RHc0bERu93d3RuxEbHb3d0RHB290bu7u7sbsRGx293dERwd293d3d29EdsRsdvd3RHcsd27u7u7uxHbEbHb3d0R3MHLzMzMvBvR2xGxsN3dERy83c0AALwdzd0RsQDb3REc3N0RDADAzMzdEbEAsN0RHNu7EQwAAADA2xGxAADbERy7uxEMAAAAALwRsQAAsMwcsRuxDAAAAADAzMwAAAAAuxERywAAAAAAAAAAAAAAALDMzAwAAAAAAAAAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "anvil"
+    },
+    "*": {
+        "mimeType": "image/x-mkcd-f4",
+        "dataEncoding": "base64",
+        "namespace": "myImages"
+    }
+}

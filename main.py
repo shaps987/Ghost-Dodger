@@ -1,24 +1,26 @@
-controller.A.onEvent(ControllerButtonEvent.Pressed, function on_a_pressed() {
-    if (mySprite.isHittingTile(CollisionDirection.Bottom)) {
+def on_a_pressed():
+    if mySprite.is_hitting_tile(CollisionDirection.BOTTOM):
         mySprite.vy = -200
-    }
-    
-})
-controller.left.onEvent(ControllerButtonEvent.Pressed, function on_left_pressed() {
+controller.A.on_event(ControllerButtonEvent.PRESSED, on_a_pressed)
+
+def on_left_pressed():
     mySprite.x += -5
-})
-controller.right.onEvent(ControllerButtonEvent.Pressed, function on_right_pressed() {
+controller.left.on_event(ControllerButtonEvent.PRESSED, on_left_pressed)
+
+def on_right_pressed():
     mySprite.x += 5
-})
-sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function on_on_overlap(sprite: Sprite, otherSprite: Sprite) {
-    game.over(false, effects.dissolve)
-})
-let projectile : Sprite = null
-let mySprite : Sprite = null
-tiles.setTilemap(tilemap`
+controller.right.on_event(ControllerButtonEvent.PRESSED, on_right_pressed)
+
+def on_on_overlap(sprite, otherSprite):
+    game.over(False, effects.dissolve)
+sprites.on_overlap(SpriteKind.player, SpriteKind.projectile, on_on_overlap)
+
+projectile: Sprite = None
+mySprite: Sprite = None
+tiles.set_tilemap(tilemap("""
     background
-`)
-mySprite = sprites.create(img`
+"""))
+mySprite = sprites.create(img("""
         ........................
             ....ffffff..............
             ..ffeeeef2f.............
@@ -43,12 +45,14 @@ mySprite = sprites.create(img`
             ........................
             ........................
             ........................
-    `, SpriteKind.Player)
-tiles.placeOnTile(mySprite, tiles.getTileLocation(1, 5))
+    """),
+    SpriteKind.player)
+tiles.place_on_tile(mySprite, tiles.get_tile_location(1, 5))
 mySprite.ay = 500
-game.onUpdateInterval(1000, function on_update_interval() {
-    
-    projectile = sprites.createProjectileFromSide(img`
+
+def on_update_interval():
+    global projectile
+    projectile = sprites.create_projectile_from_side(img("""
             ........................
                     ........................
                     ........................
@@ -73,7 +77,9 @@ game.onUpdateInterval(1000, function on_update_interval() {
                     ........................
                     ........................
                     ........................
-        `, randint(-125, -70), 0)
-    tiles.placeOnTile(projectile, tiles.getTileLocation(9, 5))
-    info.changeScoreBy(1)
-})
+        """),
+        randint(-125, -70),
+        0)
+    tiles.place_on_tile(projectile, tiles.get_tile_location(9, 5))
+    info.change_score_by(1)
+game.on_update_interval(1000, on_update_interval)
